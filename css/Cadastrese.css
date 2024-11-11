@@ -1,3 +1,4 @@
+/* Definições gerais */
 :root {
     --cor-principal: #52A78E;
     --cor-secundaria: #4B4E6D;
@@ -17,154 +18,197 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Fredoka', sans-serif;
 }
 
-body, html {
-    background: url(/img/saude-a-bordo-bg.png);
+body {
+    background: url(/img/saude-a-bordo-bg.png) no-repeat center center fixed;
+    background-size: cover;
+    font-family: Fredoka, sans-serif;
     height: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #f0f0f0;
     color: var(--cor-textos);
+    margin: 0;
 }
 
-.main-container {
-    background-color: #FFFFFF;
-    border-radius: 16px;
-    text-align: center;
-    padding: 20px;
+/* Seção do Topo */
+#top-section {
     width: 100%;
-    max-width: 430px; /* Largura máxima */
+    background-color: #fff;
+    padding: 10px 10px;
+    margin-bottom: 10px;
 }
 
-.logo {
-    width: 100px; /* Largura da logo */
-    height: auto; /* Mantém proporção */
-    margin-bottom: 3%; /* Espaçamento */
-}
-
-h1 {
-    font-size: 26px; /* Tamanho da fonte do título */
-    margin: 20px 0; /* Margem superior/inferior */
-}
-
-p {
-    margin-bottom: 20px; /* Margem inferior */
-}
-
-.illustration {
-    width: 100px; /* Tamanho da ilustração */
-    margin: 20px 0; /* Espaçamento */
-}
-
-.form-cadastro {
+.top-container {
     display: flex;
-    flex-direction: column; /* Coloca os campos em coluna */
-    align-items: center; /* Alinha os itens no centro */
-    padding: 20px; /* Preenchimento */
-    border-radius: 10px; /* Bordas arredondadas */
-    width: 100%; /* Largura total */
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Botão Voltar */
+#back-button {
+    padding: 12px 20px;
+    font-family: fredoka;
+    color: var(--cor-placeholder);
+    background-color: #fff;
+    border: solid 1px var(--cor-placeholder);
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+#back-button:hover {
+    background-color: #52a76e;
+    color: #fff;
+}
+
+/* Estilo do usuário logado */
+#user-info {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    font-size: 16px;
+    color: rgba(112, 112, 112, 1);
+}
+
+#user-name {
+    padding-right: 10px;
+}
+
+#user-image {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+/* Estilo do link de Cadastro */
+a.btn {
+    display: inline-block;
+    background-color: var(--cor-principal);
+    color: var(--cor-fonte-botoes);
+    padding: 15px;
+    text-align: center;
+    border-radius: 10px;
+    font-size: 18px;
+    width: 100%;
+    text-decoration: none;
+    margin-top: 20px;
+}
+
+a.btn:hover {
+    background-color: var(--cor-secundaria);
+}
+
+/* Estilo do formulário */
+#Principal__Registro_de_Atividades {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 40px;
+    width: 100%;
+    max-width: 430px;
+    background-color: #fff;
+    border-radius: 16px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin: 100px auto;
 }
 
 .input-group {
     position: relative;
-    width: 100%; /* Largura total */
-    margin-bottom: 1.5rem; /* Espaçamento entre os campos */
-    background-color: #FFFFFF;
+    margin-bottom: 20px;
+    width: 100%;
 }
 
 .input-group input {
-    width: 100%; /* Largura total */
-    padding: 0.8rem; /* Preenchimento */
+    width: 100%;
+    padding: 14px;
+    font-size: 16px;
     border: 1px solid var(--cor-borda-input);
-    border-radius: 5px; /* Bordas arredondadas */
-    font-size: 1rem; /* Tamanho da fonte */
-    outline: none; /* Sem contorno ao focar */
-    background: none; /* Sem fundo */
-    color: var(--cor-textos); /* Cor do texto */
-}
-
-.input-group input:focus {
-    border-color: var(--cor-borda-input-focus); /* Cor da borda ao focar */
+    border-radius: 8px;
+    background-color: var(--cor-fundo-form);
 }
 
 .input-group label {
     position: absolute;
-    top: 50%; /* Centraliza verticalmente */
-    left: 0.8rem; /* Lateral esquerda */
-    transform: translateY(-50%); /* Centraliza verticalmente */
-    padding: 0 0.2rem; /* Preenchimento */
-    color: var(--cor-placeholder); /* Cor do texto placeholder */
-    transition: 0.3s; /* Transição suave */
-    pointer-events: none; /* Ignora eventos */
+    top: -8px;
+    left: 10px;
+    font-size: 14px;
+    color: var(--cor-placeholder);
 }
 
-.input-group input:focus + label,
-.input-group input:not(:placeholder-shown) + label {
-    top: -0.6rem; /* Move a etiqueta para cima ao focar */
-    left: 0.6rem; /* Ajuste lateral */
-    font-size: 0.8rem; /* Tamanho menor da fonte */
-    color: var(--cor-label-ativa); /* Cor ativa */
-}
-.password-container {
-    position: relative;
-}
-
-.show-password-icon {
-    position: absolute;
-    right: 10px;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 20px;
-    cursor: pointer;
-}
-.btn {
-    width: 100%; /* Largura total */
-    padding: 0.8rem; /* Preenchimento */
-    background-color: var(--cor-principal); /* Cor de fundo */
-    color: var(--cor-fonte-botoes); /* Cor do texto */
-    border: none; /* Sem borda */
-    border-radius: 10px; /* Bordas arredondadas */
-    cursor: pointer; /* Cursor em forma de mão */
-    margin-top: 1rem; /* Margem superior */
-    margin-bottom: 1em;
-    font-size: 1rem; /* Tamanho da fonte */
-    transition: background-color 0.3s; /* Transição suave */
-}
-
-.btn:hover {
-    background-color: var(--cor-secundaria); /* Cor ao passar o mouse */
-    color: var(--cor-placeholder)
-}
-
-.link {
-    color: var(--cor-link); /* Cor do link */
-    text-decoration: none; /* Sem sublinhado */
-    font-size: 0.9rem; /* Tamanho da fonte */
-    margin-top: 1rem; /* Margem superior */
-}
-
-.link:hover {
-    color: var(--cor-link-hover); /* Cor ao passar o mouse */
-    text-decoration: underline; /* Sublinhado ao passar o mouse */
-}
-
-@media (max-width: 600px) {
-    h1 {
-        font-size: 22px; /* Tamanho menor em telas pequenas */
-    }
-    
-    .logo {
-        width: 50%; /* Aumenta a largura em telas pequenas */
+/* Responsividade */
+@media (max-width: 768px) {
+    #Principal__Registro_de_Atividades {
+        padding: 10px;
     }
 
-    .input-group input {
-        padding: 0.5rem; /* Ajusta o preenchimento em telas pequenas */
+    svg {
+        width: 100%;
+        height: auto;
     }
 
-    .btn {
-        max-width: 90%; /* Largura máxima em telas pequenas */
+    .icon-img {
+        display: block;
+        margin: 10px auto;
+    }
+
+    .activity-box {
+        width: 100%;
+        max-width: 320px;
+    }
+}
+
+/* Rodapé com ícones de botões dentro da div principal */
+#aaa {
+    width: 100%;
+    background-color: var(--cor-principal);
+    padding: 10px 0;
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+/* Contêiner de ícones do rodapé */
+#button-container {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+    flex-wrap: wrap;
+}
+
+.footer-icon {
+    width: 5%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 5px;
+}
+
+.footer-icon a {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.footer-icon img {
+    width: 100%;
+    height: auto;
+}
+
+/* Responsividade para os ícones no rodapé */
+@media (max-width: 768px) {
+    #button-container {
+        justify-content: space-around;
+    }
+
+    .footer-icon {
+        width: 5%;
+        height: auto;
     }
 }
